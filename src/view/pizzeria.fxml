@@ -13,10 +13,10 @@
 <VBox xmlns:fx="http://javafx.com/fxml"
         fx:controller="controller.PizzeriaController"
         alignment="center" spacing="10" 
-        styleClass="root"
-        >
+        styleClass="root">
 
     <Text styleClass="heading" text="Hello world"/>
+        <ListView fx:id="custLv" prefWidth="250" prefHeight="150" items="${controller.pizzeria.customers}"/>
 
     <stylesheets><URL value="@style.css"/></stylesheets>
 </VBox>
