@@ -11,12 +11,26 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-        fx:controller="controller.PizzeriaController"
-        alignment="center" spacing="10" 
-        styleClass="root">
-
-    <Text styleClass="heading" text="Hello world"/>
-        <ListView fx:id="custLv" prefWidth="250" prefHeight="150" items="${controller.pizzeria.customers}"/>
-
-    <stylesheets><URL value="@style.css"/></stylesheets>
+      fx:controller="controller.PizzeriaController"
+      alignment="center" spacing="10" 
+      styleClass="root">
+    <HBox alignment="center">
+    <ImageView>
+        <image>
+            <Image url="@pizzeria.png"/>
+        </image>
+    </ImageView>
+    <Text styleClass="heading" text="Main Menu"/>
+    </HBox>
+    <HBox alignment="center">
+    <ListView fx:id="custLv" prefWidth="250" prefHeight="150" items="${controller.pizzeria.customers}"/>
+    </HBox>
+    <HBox alignment="center">
+        <Button text="Add customer" onAction="#handleAdd"/>
+        <Button text="Serve customer" onAction="#handleServe"/>
+        <Button text="View report" onAction="#viewReport"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
 </VBox>

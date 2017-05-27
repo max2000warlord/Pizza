@@ -18,8 +18,22 @@ public class PizzeriaController extends Controller<Pizzeria> {
     
     @FXML private ListView<Customer> custLv;
     
-    private Customer getSelectedProduct(){
+    private Customer getSelectedCustomer(){
     return custLv.getSelectionModel().getSelectedItem();
     
     }
+    
+    @FXML private void handleServe (ActionEvent event) throws Exception {
+    Customer customer = getSelectedCustomer();
+    ViewLoader.showStage(customer, "/view/serve.fxml", "Serve Customer", new Stage());
+}
+    @FXML private void handleAdd (ActionEvent event) throws Exception {
+    Customer customer = getSelectedCustomer();
+    ViewLoader.showStage(customer, "/view/customer_add.fxml", "Add Customer", new Stage());
+}
+    @FXML private void viewReport (ActionEvent event) throws Exception {
+    Customer customer = getSelectedCustomer();
+    ViewLoader.showStage(customer, "/view/report.fxml", "View Report", new Stage());
+}
+    
 }
