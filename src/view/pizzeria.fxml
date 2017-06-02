@@ -14,7 +14,7 @@
       fx:controller="controller.PizzeriaController"
       alignment="center" spacing="10" 
       styleClass="root">
-    <HBox alignment="center">
+    <HBox alignment="center" spacing="10" styleClass="header">
     <ImageView>
         <image>
             <Image url="@pizzeria.png"/>
@@ -22,10 +22,10 @@
     </ImageView>
     <Text styleClass="heading" text="Main Menu"/>
     </HBox>
-    <HBox alignment="center">
+    <HBox alignment="center" spacing="10" styleClass="header">
     <ListView fx:id="custLv" prefWidth="250" prefHeight="150" items="${controller.pizzeria.customers}"/>
     </HBox>
-    <HBox alignment="center">
+    <HBox alignment="center" spacing="10" styleClass="footer">
         <Button text="Add customer" onAction="#handleAdd"/>
         <Button text="Serve customer" onAction="#handleServe"/>
         <Button text="View report" onAction="#viewReport"/>
