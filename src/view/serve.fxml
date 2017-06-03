@@ -26,13 +26,13 @@
     <Text styleClass="heading" text="Serve customer"/>
     </HBox>
     <HBox alignment="center">
-    <Button text="Create pizza" onAction="#createPizza"/>
+    
     <Label text="OR..." />
     <ComboBox fx:id="popCombo" promptText="Select popular past pizza"/>
     </HBox>
     <HBox alignment="center">
-        <Button text="Cancel" onAction="#cancelOrder"/>
-        <Button text="Submit order" onAction="#submitOrder"/>
+        
+        
         
     </HBox>
     <stylesheets>
