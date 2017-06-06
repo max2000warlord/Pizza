@@ -11,12 +11,13 @@ import javafx.collections.*;
 
 public class PizzeriaController extends Controller<Pizzeria> {
 
+    @FXML private ListView<Customer> custLv;
+
     @FXML public void initialize() {
+
     }
 
     public final Pizzeria getPizzeria() {return model;}
-    
-    @FXML private ListView<Customer> custLv;
     
     private Customer getSelectedCustomer(){
     return custLv.getSelectionModel().getSelectedItem();

@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import java.net.URL?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.VBox?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="controller.ServeController"
-      alignment="center" spacing="10"
-      styleClass="root">
-    
-    <HBox alignment="center">
-    <ImageView>
-        <image>
-            <Image url="@pizzeria.png"/>
-        </image>
-    </ImageView>
-    <Text styleClass="heading" text="Serve customer"/>
+<VBox alignment="center" spacing="10" styleClass="root" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServeController">
+
+    <HBox alignment="CENTER">
+        <ImageView>
+            <image>
+                <Image url="@pizzeria.png" />
+            </image>
+        </ImageView>
+        <VBox>
+            <Text styleClass="heading" text="Serve customer" />
+            <HBox>
+                <Label text="Name: "/>
+                <Text text="${controller.customer.name}" />
+            </HBox>
+            <HBox>
+                <Label text="Phone: " />
+                <Text text="${controller.customer.phone}" />
+            </HBox>
+        </VBox>
     </HBox>
-    <HBox alignment="center">
-    
-    <Label text="OR..." />
-    <ComboBox fx:id="popCombo" promptText="Select popular past pizza"/>
+    <HBox alignment="center" spacing="10" styleClass="header">
+        <Button onAction="#createPizza" text="Create pizza" />
+        <Label text="OR..." />
+        <ComboBox fx:id="popCombo" items="${controller.customer.ordered}" promptText="Select past popular pizza" />
+        <Button onAction="#selectPopPizza" text="Select" />
     </HBox>
-    <HBox alignment="center">
-        
-        
-        
+    <VBox>
+        <Label alignment="center_left" styleClass="Label" text="Order" />
+        <ListView fx:id="pizzaLv" items="${controller.customer.order}" prefHeight="200" prefWidth="300">
+            <placeholder>
+                <Label text="No pizzas in order" />
+            </placeholder>
+        </ListView>
+        <HBox alignment="center_left" spacing="10" styleClass="big">
+            <Label text="Total: " />
+            <Text text="${}" />
+        </HBox>
+    </VBox>
+    <HBox alignment="center" spacing="10" styleClass="footer">
+        <Button onAction="#cancelOrder" text="Cancel" />
     </HBox>
     <stylesheets>
-        <URL value="@style.css"/>
-    </stylesheets>
-
-    <stylesheets>
-        <URL value="@style.css"/>
+        <URL value="@style.css" />
     </stylesheets>
 </VBox>

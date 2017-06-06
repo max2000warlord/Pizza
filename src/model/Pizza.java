@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Iterator;
 import java.text.*;
 
+
 public class Pizza {
     private Customer customer;
     private LinkedList<Ingredient> ingredients = new LinkedList<Ingredient>();
@@ -12,31 +13,24 @@ public class Pizza {
     public Pizza(Customer customer) {
         this.customer = customer;
     }
-
     public final LinkedList<Ingredient> getIngredients() {
         return ingredients;
     }
-
     public final Customer getCustomer() {
         return customer;
     }
-
     public final Kitchen getKitchen() {
         return customer.getKitchen();
     }
-
     public boolean add(Ingredient ingredient) {
         return ingredients.add(ingredient);
     }
-
     public boolean remove(Ingredient ingredient) {
         return ingredients.remove(ingredient);
     }
-
     public void order() {
         customer.order(this);
     }
-
     public int getSold() {
         return sold;
     }
