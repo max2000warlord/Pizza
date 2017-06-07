@@ -15,6 +15,7 @@ public class ServeController extends Controller<Customer> {
     public Customer getCustomer() {return model;}
     @FXML private ComboBox<Pizza> popCombo;
     @FXML private ListView<Pizza> pizzaLv;
+    @FXML private Button cancelOrder;
     
     
     private Pizza getSelectedCombo() {return pizzaLv.getSelectionModel().getSelectedItem();}
