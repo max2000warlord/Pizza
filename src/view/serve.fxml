@@ -35,7 +35,7 @@
         <Text styleClass="big" text="Order" />
         <ListView fx:id="pizzaLv" items="${controller.customer.order}">
             <placeholder>
-                <Label text="No pizzas in order" />
+                <Text text="No pizzas in order" />
             </placeholder>
         </ListView>
         <HBox alignment="center_left" spacing="10" styleClass="big">
