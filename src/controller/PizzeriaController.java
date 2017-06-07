@@ -31,12 +31,10 @@ public class PizzeriaController extends Controller<Pizzeria> {
     }
     
     @FXML private void handleServe (ActionEvent event) throws Exception {
-    Customer customer = getSelectedCustomer();
-    ViewLoader.showStage(customer, "/view/serve.fxml", "Serve Customer", new Stage());
+    ViewLoader.showStage(getSelectedCustomer(), "/view/serve.fxml", "Serve Customer", new Stage());
 }
     @FXML private void handleAdd (ActionEvent event) throws Exception {
-    Customer customer = getSelectedCustomer();
-    ViewLoader.showStage(customer, "/view/customer_add.fxml", "Add Customer", new Stage());
+    ViewLoader.showStage(getSelectedCustomer(), "/view/customer_add.fxml", "Add Customer", new Stage());
 }
     @FXML private void viewReport (ActionEvent event) throws Exception {
     Customer customer = getSelectedCustomer();

@@ -1,9 +1,8 @@
 package model;
 
 import javafx.beans.property.*;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.*;
-
+import javafx.beans.binding.*;
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.text.*;
@@ -13,6 +12,7 @@ public class Pizza {
     private Customer customer;
     private ObservableList<Ingredient> ingredients = FXCollections.observableArrayList();
     private DoubleProperty balance = new SimpleDoubleProperty();
+    private StringProperty status = new SimpleStringProperty();
     private int sold;
 
     public Pizza(Customer customer) {
@@ -20,6 +20,10 @@ public class Pizza {
         this.customer = customer;
         this.balance.set(0.0);
     }
+    public final void setStatusString() {status.set(getStatusString());}
+    //public ReadOnlyStringProperty statusString() {
+        //status.bind(getStatusString());
+    //}
     public final ObservableList<Ingredient> getIngredients() {
         return ingredients;
     }

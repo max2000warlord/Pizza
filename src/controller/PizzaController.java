@@ -12,11 +12,13 @@ import javafx.collections.*;
 
 public class PizzaController extends Controller<Pizza> {
     @FXML private ListView<Ingredient> ingLv;
-    @FXML private ListView<Ingredient> availableLv;
-    @FXML private Button leftBtn;
     @FXML private Text priceTxt;
+    @FXML private Text stringStatus;
+    @FXML private ListView<Ingredient> selectedLv;
+    @FXML private Button leftBtn;
     @FXML private Button rightBtn;
     @FXML private Button cancelBtn;
+    @FXML private Button createBtn;
 
 
 
@@ -27,8 +29,10 @@ public class PizzaController extends Controller<Pizza> {
     }
 
         @FXML private void initialize() {
-
+            selectedLv.getSelectionModel().selectedItemProperty().addListener(
+                    (observable, oldSubject, newSubject) -> createBtn.setDisable(newSubject == null));
         priceTxt.textProperty().bind(getPizza().orderPrice().asString("$%.2f"));
+
         }
 
         @FXML private void cancelOrder(ActionEvent event) throws Exception {

@@ -12,7 +12,6 @@ import javafx.collections.*;
 public class CustomerAddController extends Controller<Pizzeria> {
     @FXML public void initialize() {
 
-
     }
 
     @FXML private TextField phoneTf;
@@ -31,6 +30,7 @@ public class CustomerAddController extends Controller<Pizzeria> {
     @FXML private void handleAdd(ActionEvent event) throws Exception {
         getPizzeria().addCustomer(getPhone(), getName());
         stage.close();
+
     }
 
 
