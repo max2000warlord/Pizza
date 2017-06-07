@@ -1,4 +1,4 @@
-[ ] The Main menu window is at least partially done.
+[X] The Main menu window is at least partially done.
 [X] The Main menu window is done.
 [X] The Serve customer window is at least partially done.
 [?] The Serve customer window is done.

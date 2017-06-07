@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import java.net.URL?>
@@ -16,9 +15,7 @@
       styleClass="root">
     <HBox alignment="center" spacing="10" styleClass="header">
     <ImageView>
-        <image>
             <Image url="@pizzeria.png"/>
-        </image>
     </ImageView>
     <Text styleClass="heading" text="Main Menu"/>
     </HBox>
