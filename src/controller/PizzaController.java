@@ -12,7 +12,9 @@ import javafx.collections.*;
 
 public class PizzaController extends Controller<Pizza> {
     @FXML private ListView<Ingredient> ingLv;
+    @FXML private ListView<Ingredient> availableLv;
     @FXML private Button leftBtn;
+    @FXML private Text priceTxt;
     @FXML private Button rightBtn;
     @FXML private Button cancelBtn;
 
@@ -26,6 +28,7 @@ public class PizzaController extends Controller<Pizza> {
 
         @FXML private void initialize() {
 
+        priceTxt.textProperty().bind(getPizza().orderPrice().asString("$%.2f"));
         }
 
         @FXML private void cancelOrder(ActionEvent event) throws Exception {

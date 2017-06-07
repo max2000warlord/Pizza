@@ -1,5 +1,6 @@
 package model;
 
+import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.*;
 
@@ -11,14 +12,19 @@ import java.text.*;
 public class Pizza {
     private Customer customer;
     private ObservableList<Ingredient> ingredients = FXCollections.observableArrayList();
+    private DoubleProperty balance = new SimpleDoubleProperty();
     private int sold;
 
     public Pizza(Customer customer) {
+
         this.customer = customer;
+        this.balance.set(0.0);
     }
     public final ObservableList<Ingredient> getIngredients() {
         return ingredients;
     }
+    public final void setBalance() {balance.set(getPrice());}
+    public ReadOnlyDoubleProperty orderPrice() {return balance;}
     public final Customer getCustomer() {
         return customer;
     }

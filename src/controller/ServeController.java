@@ -25,21 +25,22 @@ public class ServeController extends Controller<Customer> {
     @FXML private Button submitOrder;
 
     @FXML public void initialize() {
+        popCombo.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldSubject, newSubject) -> selectBtn.setDisable(newSubject == null));
         pizzaLv.getSelectionModel().selectedItemProperty().addListener(
             (observable, oldSubject, newSubject) -> submitOrder.setDisable(newSubject == null));
+        priceTxt.textProperty().bind(getCustomer().orderPrice().asString("$%.2f"));
     }
     
     private Pizza getSelectedCombo() {return pizzaLv.getSelectionModel().getSelectedItem();}
 
     @FXML private void addToOrder() {
-
-
     }
 
 
     @FXML private void createPizza(ActionEvent event) throws Exception {
         Pizza pizza = getSelectedCombo();
-        ViewLoader.showStage(pizza, "/view/pizza.fxml", "Create Pizza", new Stage());
+        ViewLoader.showStage(getCustomer().createPizza(), "/view/pizza.fxml", "Create Pizza", new Stage());
     }
 
 

@@ -1,9 +1,12 @@
 package model;
 
+import javafx.beans.property.*;
+
 import java.text.*;
 
 public class Ingredient {
     private String name;
+    private StringProperty ingName = new SimpleStringProperty();
     private double price;
     private Category category;
     private int sold;
@@ -14,6 +17,9 @@ public class Ingredient {
         this.category = category;
         sold = 0;
     }
+
+    public final void setIngName() {ingName.set(getName());}
+    public ReadOnlyStringProperty ingName() {return ingName;}
 
     public void sell() {
         sold++;

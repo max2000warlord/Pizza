@@ -17,10 +17,10 @@
     <HBox alignment="center" spacing="10" styleClass="header">
         <VBox spacing="10">
             <Text styleClass="big" text="Available" />
-            <ListView fx:id="ingLv" items="${controller.pizza.ingredients}"/>
-            <HBox>
+            <ListView fx:id="ingLv" items="${controller.pizza.kitchen.ingredients}"/>
+            <HBox alignment="center_left" spacing="10" styleClass="big">
                 <Label text="Price: " />
-                <Text fx:id=""/>
+                <Text fx:id="priceTxt"/>
             </HBox>
         </VBox>
         <VBox alignment="CENTER" spacing="10">

@@ -1,6 +1,8 @@
 package model;
 
 import java.util.LinkedList;
+
+import javafx.beans.property.*;
 import javafx.collections.*;
 
 public class Customer {
@@ -9,12 +11,18 @@ public class Customer {
     private String name;
     private ObservableList<Pizza> ordered = FXCollections.observableArrayList();
     private ObservableList<Pizza> order = FXCollections.observableArrayList();
+    private DoubleProperty balance = new SimpleDoubleProperty();
+    private StringProperty cash = new SimpleStringProperty();
 
     public Customer(Kitchen kitchen, String phone, String name) {
         this.kitchen = kitchen;
         this.phone = phone;
         this.name = name;
+        this.balance.set(0.0);
     }
+
+    public final void setBalance() {balance.set(getOrderPrice());}
+    public ReadOnlyDoubleProperty orderPrice() {return balance;}
 
     public void cancelOrder() {
         order.clear();
