@@ -12,9 +12,14 @@ import javafx.collections.*;
 public class PizzeriaController extends Controller<Pizzeria> {
 
     @FXML private ListView<Customer> custLv;
+    @FXML private Button serveCust;
+    @FXML private Button addCust;
+    @FXML private Button viewReport;
 
     @FXML public void initialize() {
-
+        custLv.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldSubject, newSubject) -> serveCust.setDisable(newSubject == null)
+        );
     }
 
     public final Pizzeria getPizzeria() {return model;}

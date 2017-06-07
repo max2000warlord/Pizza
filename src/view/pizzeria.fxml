@@ -23,9 +23,9 @@
     <ListView fx:id="custLv" prefWidth="250" prefHeight="150" items="${controller.pizzeria.customers}"/>
     </HBox>
     <HBox alignment="center" spacing="10" styleClass="footer">
-        <Button text="Add customer" onAction="#handleAdd"/>
-        <Button text="Serve customer" onAction="#handleServe"/>
-        <Button text="View report" onAction="#viewReport"/>
+        <Button fx:id="addCust" text="Add customer" onAction="#handleAdd"/>
+        <Button fx:id="serveCust" text="Serve customer" onAction="#handleServe"/>
+        <Button fx:id="viewReport" text="View report" onAction="#viewReport"/>
     </HBox>
     <stylesheets>
         <URL value="@style.css"/>
