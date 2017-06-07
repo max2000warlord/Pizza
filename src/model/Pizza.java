@@ -1,6 +1,7 @@
 package model;
 
 import javafx.beans.value.ObservableValue;
+import javafx.collections.*;
 
 import java.util.LinkedList;
 import java.util.Iterator;
@@ -9,13 +10,13 @@ import java.text.*;
 
 public class Pizza {
     private Customer customer;
-    private LinkedList<Ingredient> ingredients = new LinkedList<Ingredient>();
+    private ObservableList<Ingredient> ingredients = FXCollections.observableArrayList();
     private int sold;
 
     public Pizza(Customer customer) {
         this.customer = customer;
     }
-    public final LinkedList<Ingredient> getIngredients() {
+    public final ObservableList<Ingredient> getIngredients() {
         return ingredients;
     }
     public final Customer getCustomer() {
@@ -155,6 +156,6 @@ public class Pizza {
     }
 
     private String formatted(double n) {
-        return new DecimalFormat("###,##0.00").format(n);
+            return new DecimalFormat("###,##0.00").format(n);
     }
 }

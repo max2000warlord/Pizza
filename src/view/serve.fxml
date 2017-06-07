@@ -27,13 +27,13 @@
     </HBox>
     <HBox alignment="center" spacing="10" styleClass="header">
         <Button onAction="#createPizza" text="Create pizza" />
-        <Label styleClass="big" text="OR..." />
+        <Text styleClass="big" text="OR..." />
         <ComboBox fx:id="popCombo" items="${controller.customer.ordered}" promptText="Select past popular pizza"/>
         <Button onAction="#selectPopPizza" text="Select" />
     </HBox>
     <VBox>
-        <Label alignment="center_left" styleClass="big" text="Order" />
-        <ListView fx:id="pizzaLv" items="${controller.customer.order}" prefHeight="200" prefWidth="300">
+        <Text styleClass="big" text="Order" />
+        <ListView fx:id="pizzaLv" items="${controller.customer.order}">
             <placeholder>
                 <Label text="No pizzas in order" />
             </placeholder>
@@ -45,6 +45,7 @@
     </VBox>
     <HBox alignment="center" spacing="10" styleClass="footer">
         <Button fx:id="cancelOrder" onAction="#cancelOrder" text="Cancel" />
+        <Button fx:id="submitOrder" disable="true" text="Submit order" />
     </HBox>
     <stylesheets>
         <URL value="@style.css" />

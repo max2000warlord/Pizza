@@ -17,8 +17,11 @@
     <HBox alignment="center" spacing="10" styleClass="header">
         <VBox spacing="10">
             <Text styleClass="big" text="Available" />
-            <ListView />
-
+            <ListView fx:id="ingLv" items="${controller.pizza.ingredients}"/>
+            <HBox>
+                <Label text="Price: " />
+                <Text fx:id=""/>
+            </HBox>
         </VBox>
         <VBox alignment="CENTER" spacing="10">
             <Button fx:id="rightBtn" text="-&gt;" />
@@ -26,7 +29,7 @@
         </VBox>
         <VBox spacing="10">
             <Text styleClass="big" text="Selected" />
-            <ListView  />
+            <ListView />
         </VBox>
     </HBox>
      <HBox alignment="center" spacing="10" styleClass="footer">

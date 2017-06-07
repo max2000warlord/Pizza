@@ -18,8 +18,9 @@ public class PizzeriaController extends Controller<Pizzeria> {
 
     @FXML public void initialize() {
         custLv.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldSubject, newSubject) -> serveCust.setDisable(newSubject == null)
-        );
+                (observable, oldSubject, newSubject) -> serveCust.setDisable(newSubject == null));
+
+
     }
 
     public final Pizzeria getPizzeria() {return model;}

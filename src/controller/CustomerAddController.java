@@ -9,10 +9,15 @@ import javafx.scene.control.*;
 import model.*;
 import javafx.collections.*;
 
-public class CustomerAddController extends Controller<Customer> {
-    @FXML public void initialize() {}
+public class CustomerAddController extends Controller<Pizzeria> {
+    @FXML public void initialize() {
+
+
+    }
+
     @FXML private TextField phoneTf;
     @FXML private TextField nameTf;
+    public final Pizzeria getPizzeria() { return model; }
 
     private String getPhone() { return phoneTf.getText(); }
     private void setPhone(String type) { phoneTf.setText(type); }
@@ -23,12 +28,11 @@ public class CustomerAddController extends Controller<Customer> {
         stage.close();
     }
 
-    @FXML private void handleAdd() {
-
+    @FXML private void handleAdd(ActionEvent event) throws Exception {
+        getPizzeria().addCustomer(getPhone(), getName());
         stage.close();
     }
 
-    public Customer getCustomer() {return model;}
 
 
 

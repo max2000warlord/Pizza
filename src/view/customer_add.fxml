@@ -16,8 +16,8 @@
         <TextField fx:id="nameTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     </GridPane>
     <HBox alignment="center" spacing="10" styleClass="footer">
-        <Button text="Cancel" />
-        <Button text="Add" />
+        <Button text="Cancel" onAction="#handleCancel"/>
+        <Button text="Add" onAction="#handleAdd"/>
     </HBox>
     <stylesheets>
         <URL value="@style.css"/>

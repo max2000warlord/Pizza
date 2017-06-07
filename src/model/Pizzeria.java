@@ -19,7 +19,7 @@ public class Pizzeria {
             pizza.add(kitchen.getIngredients().get(4)); // Capsicum topping
             pizza.add(kitchen.getIngredients().get(6)); // Jalapenos topping
             pizza.order();
-            System.out.println(pizza);
+            //System.out.println(pizza);
             kelly.submitOrder();
         }
         catch (Exception e) {
