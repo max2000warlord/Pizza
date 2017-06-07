@@ -7,16 +7,20 @@ import javafx.stage.*;
 import javafx.scene.text.*;
 import javafx.scene.control.*;
 import model.*;
+import javafx.beans.binding.*;
+import javafx.beans.property.*;
 import javafx.collections.*;
 
 public class ServeController extends Controller<Customer> {
-  
-    @FXML public void initialize() {}
+
     public Customer getCustomer() {return model;}
     @FXML private ComboBox<Pizza> popCombo;
     @FXML private ListView<Pizza> pizzaLv;
     @FXML private Button cancelOrder;
-    
+    @FXML private Text priceTxt;
+
+    @FXML public void initialize() {
+    }
     
     private Pizza getSelectedCombo() {return pizzaLv.getSelectionModel().getSelectedItem();}
 
@@ -25,7 +29,10 @@ public class ServeController extends Controller<Customer> {
         Pizza pizza = getSelectedCombo();
         ViewLoader.showStage(pizza, "/view/pizza.fxml", "Create Pizza", new Stage());
     }
-    
+
+
+
+
     @FXML private void selectPopPizza(ActionEvent event) throws Exception {
         getCustomer().submitOrder();
 }

@@ -1,5 +1,7 @@
 package model;
 
+import javafx.beans.value.ObservableValue;
+
 import java.util.LinkedList;
 import java.util.Iterator;
 import java.text.*;

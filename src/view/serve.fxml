@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -26,12 +27,12 @@
     </HBox>
     <HBox alignment="center" spacing="10" styleClass="header">
         <Button onAction="#createPizza" text="Create pizza" />
-        <Label text="OR..." />
+        <Label styleClass="big" text="OR..." />
         <ComboBox fx:id="popCombo" items="${controller.customer.ordered}" promptText="Select past popular pizza"/>
         <Button onAction="#selectPopPizza" text="Select" />
     </HBox>
     <VBox>
-        <Label alignment="center_left" styleClass="" text="Order" />
+        <Label alignment="center_left" styleClass="big" text="Order" />
         <ListView fx:id="pizzaLv" items="${controller.customer.order}" prefHeight="200" prefWidth="300">
             <placeholder>
                 <Label text="No pizzas in order" />
@@ -39,7 +40,7 @@
         </ListView>
         <HBox alignment="center_left" spacing="10" styleClass="big">
             <Label text="Total: " />
-
+            <Text fx:id="priceTxt" text="${controller}" />
         </HBox>
     </VBox>
     <HBox alignment="center" spacing="10" styleClass="footer">

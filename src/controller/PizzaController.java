@@ -10,5 +10,19 @@ import model.*;
 import javafx.collections.*;
 
 
-public class PizzaController {
+public class PizzaController extends Controller<Pizza> {
+
+@FXML private Button leftBtn;
+@FXML private Button rightBtn;
+@FXML private Button cancelBtn;
+
+public Pizza getPizza() {return model;}
+
+    @FXML private void initialize() {}
+
+    @FXML private void cancelOrder(ActionEvent event) throws Exception {
+        stage.close();
+    }
 }
+
+
