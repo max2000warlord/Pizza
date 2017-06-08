@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <VBox alignment="center" spacing="10" styleClass="root" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
     <HBox alignment="CENTER" spacing="10" styleClass="header">
         <ImageView>
             <Image url="@pizzeria.png" />
         </ImageView>
-            <Text styleClass="heading" text="Serve customer" />
+            <Text styleClass="heading" text="Income report" />
     </HBox>
    <VBox alignment="CENTER" spacing="10" styleClass="header">
-       <TableView prefHeight="200.0" prefWidth="200.0">
+       <TableView fx:id="reportTable">
            <columns>
                <TableColumn text="Ingredient" />
                <TableColumn text="Price" />
@@ -22,10 +27,14 @@
                <TableColumn text="Income" />
            </columns>
        </TableView>
+       <HBox alignment="CENTER_LEFT">
+           <Label text="Total income: " />
+           <Text fx:id="" styleClass="big" />
+       </HBox>
    </VBox>
-   <HBox alignment="CENTER" spacing="10" styleClass="footer">
-
-   </HBox>
+    <HBox alignment="CENTER" spacing="10" styleClass="footer">
+        <Button fx:id="closeWindow" text="Close" />
+    </HBox>
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
