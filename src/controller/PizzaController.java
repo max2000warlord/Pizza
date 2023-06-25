@@ -32,6 +32,7 @@ public class PizzaController extends Controller<Pizza> {
             selectedLv.getSelectionModel().selectedItemProperty().addListener(
                     (observable, oldSubject, newSubject) -> createBtn.setDisable(newSubject == null));
         priceTxt.textProperty().bind(getPizza().orderPrice().asString("$%.2f"));
+        //123
 
         }
 
